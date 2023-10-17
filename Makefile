@@ -48,7 +48,6 @@ OBJS = $(SRC:.c=.o)
 AR = ar -rcs
 
 #========================== REMOVE ================================
-
 ## DELETE FILES
 REMOVE = rm -f
 
@@ -79,5 +78,5 @@ re: fclean all
 debug: $(NAME)
 	$(CC) -g $(NAME)
 
-## AVOID RUNNING FILES WITH THE SAME NAME AS THE FLAGS
+## AVOID RUNNING FILES WITH THE SAME NAME AS THE RULES
 .PHONY: all clean fclean re debug
