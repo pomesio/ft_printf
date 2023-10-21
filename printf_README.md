@@ -1,3 +1,12 @@
+
+            :::      ::::::::
+          :+:      :+:    :+:
+        +:+ +:+         +:+
+      +#+  +:+       +#+      
+    +#+#+#+#+#+   +#+          By: jade-car <jade-car@student.42barcel>
+        #+#    #+#            
+       ###   ########.fr
+
 # ft_printf
 
 **I'M GOING TO REPLICATE HOW PRINTF WORKS!! :)**
