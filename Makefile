@@ -56,6 +56,7 @@ all: $(NAME)
 
 ## COMPILE FILES.c IN A EXECUTABLE NAMED 'libftprintf.a'
 ${NAME}:	${OBJS}
+		@echo "✨😎It's compiling... just a sec. ✨"
 		@ar rcs ${NAME} ${OBJS}
 		@printf "${GREEN}LIBFT: ${PURPLE}🎉Congrats it works🥳!${RESET}"
 
