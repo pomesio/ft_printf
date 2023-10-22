@@ -26,7 +26,7 @@ CC = cc
 #========================== CFLAGS =================================
 CFLAGS = -Werror -Wextra -Wall
 
-#========================== SOURCE =================================
+#========================== SOURCE FILES ===========================
 ## LOOK UP FOR FILES.c
 SRC = ft_printf.c ft_putchar.c ft_putstr.c ft_putnbr.c
 
@@ -53,7 +53,7 @@ REMOVE = rm -f
 all: $(NAME)
 
 ## COMPILE FILES.c IN A EXECUTABLE NAMED 'libftprintf.a'
-${NAME}:	${OBJS}
+$(NAME):	${OBJS}
 		@echo "✨Compiling... just a sec. ✨"
 		@ar rcs ${NAME} ${OBJS}
 		@printf "${GREEN}LIBFT: ${PURPLE}🎉Congrats it works🥳!${RESET}"
