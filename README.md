@@ -12,6 +12,14 @@
 **I'M GOING TO REPLICATE HOW PRINTF WORKS!! :)**
 
 🔎
-The printf() function is a C standard library function used to display data on the screen. It can output various data types, including hexadecimal, strings and pointers. printf() transfers data from memory to the screen and **returns** the count of characters written. If the number returned is negative, it returns an error.
-  
-🔬
+The printf() function is a C standard library function used to display data on the screen. It can output various data types, including hexadecimal, strings and pointers. printf() transfers data from memory to the screen and **returns** the count of characters written. If the number returned is negative, it returns an error.  
+
+🔬To build the printf function we must analyze the printf prototype, the importance of variadic variables and other functions.
+
+I. printf prototype  
+---
+II. Variadic variables
+---  
+
+III. Additional functions
+___
