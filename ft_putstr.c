@@ -15,7 +15,7 @@ int	ft_putstr(const char *s)
 {
 	int	i;
 
-	if (!s)
+	if (s == NULL)
 		return (-1);
 	else
 	{
@@ -23,5 +23,5 @@ int	ft_putstr(const char *s)
 		while (s[i])
 			write(1, &s[i++], 1);
 	}
-	return (0);
+	return (i);
 }
