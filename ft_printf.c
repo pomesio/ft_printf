@@ -29,30 +29,29 @@ int	ft_formatter(char fmword, va_list argptr)
 
 int	ft_printf(char const *onscreen, ...)
 {
-	int	printfsize;
+	int	printsize;
 	size_t	i;
 	va_list	argptr;
 
 	va_start (argptr, onscreen);
 	i = 0;
-	printfsize = 0;
+	printsize = 0;
 	while (onscreen[i])
 	{
 		if (onscreen[i] == '%')
 		{
 			i++;
-			printfsize += ft_formatter(onscreen[i], argptr);
-			if (printfsize == -1)
-				return (printfsize);
+			printsize += ft_formatter(onscreen[i], argptr);
+			if (printsize == -1)
+				return (printsize);
 		}
 		else
 		{
 			ft_putchar(onscreen[i]);
-			printfsize++;
+			printsize++;
 		}
 		i++;
 	}
-
 	va_end (argptr);
-	return (printfsize);
+	return (printsize);
 }
