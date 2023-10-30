@@ -27,3 +27,23 @@ int	ft_putnbr(int n)
 		ft_putnbr(nb / 10);
 	return (ft_putchar(nb % 10 + 48));
 }
+int	main()
+{
+	ft_putnbr(-01287);
+}
+/* 
+#NEED TEST
+int	ft_putnbr(int n)
+{
+	if(!n)
+		return(-1);
+	if (n < 0)
+	{
+		n = -n;
+		ft_putchar('-');
+	}
+	if (n / 10)
+		ft_putnbr(n / 10);
+	return (ft_putchar(nb % 10 + 48));
+}
+*/
