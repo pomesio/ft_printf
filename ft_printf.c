@@ -22,6 +22,8 @@ int	ft_formatter(char fmword, va_list argptr)
 		return (ft_putnbr(va_arg(argptr, int)));
 	else if (fmword == 'd')
 		return (ft_putnbr (va_arg(argptr, int)));
+	else if (fmword == '%')
+		return(ft_putpercent);
 	return (-1);
 }
 
