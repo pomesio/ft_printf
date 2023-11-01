@@ -33,7 +33,7 @@ int	ft_printf(char const *onscreen, ...)
 	size_t	i;
 	va_list	argptr;
 
-	va_start (argptr, onscreen);
+	va_start (argptr, onscreen); //se puede reducir a 1 linea (x || y)
 	i = 0;
 	printsize = 0;
 	while (onscreen[i])
@@ -41,7 +41,7 @@ int	ft_printf(char const *onscreen, ...)
 		if (onscreen[i] == '%')
 		{
 			i++;
-			printsize += ft_formatter(onscreen[i], argptr);
+			printsize += ft_formatter(onscreen[i], argptr); //cambiar a onscreen[i++] o ++i
 			if (printsize == -1)
 				return (printsize);
 		}
