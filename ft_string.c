@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_string.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jade-car <jade-car@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 20:31:02 by jade-car          #+#    #+#             */
-/*   Updated: 2023/11/12 21:38:10 by jade-car         ###   ########.fr       */
+/*   Created: 2023/11/08 20:31:54 by jade-car          #+#    #+#             */
+/*   Updated: 2023/11/12 22:28:59 by jade-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr(int n)
+int	ft_string(const char *s)
 {
-	long	nb;
+	int	i;
 
-	if (!n)
-		return (-1);
-	nb = n;
-	if (nb < 0)
-	{
-		nb = -nb;
-		ft_char('-');
-	}
-	if (nb / 10)
-		ft_putnbr(nb / 10);
-	return (ft_char(nb % 10 + 48));
+	i = 0;
+	if (!s)
+		return(write(1, "(null)", 6));
+	while (s[i])
+		write(1, &s[i++], 1);
+	return (i);
 }
