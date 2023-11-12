@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_hexadecimal.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jade-car <jade-car@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 20:31:02 by jade-car          #+#    #+#             */
-/*   Updated: 2023/11/12 21:38:10 by jade-car         ###   ########.fr       */
+/*   Created: 2023/11/08 20:29:12 by jade-car          #+#    #+#             */
+/*   Updated: 2023/11/12 21:42:28 by jade-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr(int n)
+int ft_hexdisplay(unsigned int number, char format_type)
 {
-	long	nb;
-
-	if (!n)
-		return (-1);
-	nb = n;
-	if (nb < 0)
+	char	*hexmask;
+	int		size;
+	
+	size = 0;
+	if(format_type == 'X')
+		hexmask = "0123456789ABCDEF";
+	else
+		hexmask = "0123456789abcdef";
+	while (number > 0)
 	{
-		nb = -nb;
-		ft_char('-');
+		if (ft_char(hexmask[number % 16]) == -1)
+		return (-1);
+		size++;
+		number /= 16;
 	}
-	if (nb / 10)
-		ft_putnbr(nb / 10);
-	return (ft_char(nb % 10 + 48));
+	return (size);
 }
