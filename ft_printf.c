@@ -6,7 +6,7 @@
 /*   By: jade-car <jade-car@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 14:26:00 by jade-car          #+#    #+#             */
-/*   Updated: 2023/11/12 23:20:59 by jade-car         ###   ########.fr       */
+/*   Updated: 2023/11/13 02:20:04 by jade-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,3 @@ int	ft_printf(char const *onscreen, ...)
 	va_end (argptr);
 	return (printsize);
 }
-
-// int	main(void)
-// {
-// 	printf("NULL )
-// }
