@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jade-car <jade-car@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/10/19 19:55:00 by jade-car          #+#    #+#              #
-#    Updated: 2023/11/12 23:04:10 by jade-car         ###   ########.fr        #
+#    Created: 2023/11/18 10:24:43 by jade-car          #+#    #+#              #
+#    Updated: 2023/11/18 11:05:53 by jade-car         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,8 +30,9 @@ CC = cc
 CFLAGS = -Werror -Wextra -Wall
 
 #========================== SOURCE =================================
-SRC = ft_char.c ft_hexadecimal.c ft_string.c ft_unsigned.c ft_percent.c \
-	ft_putnbr.c ft_printf.c ft_pointer.c
+SRC = ft_char.c ft_hexadec.c \
+		ft_string.c ft_unsigned.c \
+		ft_interger.c ft_printf.c ft_pointer.c
 
 #========================== LIBRARY ===============================
 HEADER = libftprintf.h
@@ -52,7 +53,7 @@ AR = ar
 ## DELETE FILES
 REMOVE = rm -f
 
-#========================== TARGET =================================
+#========================== TARGETS ===============================
 all: $(NAME)
 
 $(NAME): $(OBJS)
@@ -62,31 +63,25 @@ $(NAME): $(OBJS)
 %.o: %.c $(HEADER) 
 	cc $(CFLAGS) -I $(HEADER) -c $< -o $@
 
-
-## DELETE ALL TARGET FILES.O
+## DELETE ALL FILES.O
 clean:
 	$(REMOVE) $(OBJS)
 
-
-## REMOVE ALL .o && EXECUTABLE 
+## REMOVE ALL .o and .a 
 fclean: clean
 	$(REMOVE) $(NAME)
-
 
 ## REBUILD ALL FILES. \
 	DELETE THE TARGET FILES AND COMPILE AGAIN
 re: fclean all
 
-
-##DISPLAYS AN INDEX WITH ALL CONTENT INSIDE THE FUNCTIONS
+## DISPLAYS AN INDEX WITH ALL CONTENT INSIDE THE FUNCTIONS
 index: $(NAME)
 	ranlib -s $(NAME)
 
-
 ## DEBUGGER OPTIONS
 debug: $(NAME)
-	$(CC) -g $(NAME)
-
+	$(CC) -g -o $(NAME) $(OBJS)
 
 ## AVOID RUNNING FILES WITH THE SAME NAME AS THE TARGETS
-.PHONY: all clean fclean re debug
+.PHONY: all clean fclean re index debug 

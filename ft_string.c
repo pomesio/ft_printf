@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jade-car <jade-car@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 20:31:54 by jade-car          #+#    #+#             */
-/*   Updated: 2023/11/12 22:28:59 by jade-car         ###   ########.fr       */
+/*   Created: 2023/11/18 10:20:08 by jade-car          #+#    #+#             */
+/*   Updated: 2023/11/20 17:52:12 by jade-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,12 @@ int	ft_string(const char *s)
 	int	i;
 
 	i = 0;
-	if (!s)
-		return(write(1, "(null)", 6));
+	if (s == NULL)
+		s = "(null)";
 	while (s[i])
-		write(1, &s[i++], 1);
+	{
+		if (write(1, &s[i++], 1) == -1)
+			return (-1);
+	}
 	return (i);
 }

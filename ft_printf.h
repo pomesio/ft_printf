@@ -6,7 +6,7 @@
 /*   By: jade-car <jade-car@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 16:29:49 by jade-car          #+#    #+#             */
-/*   Updated: 2023/11/12 21:40:44 by jade-car         ###   ########.fr       */
+/*   Updated: 2023/11/20 18:27:39 by jade-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@
 # include <stdarg.h>
 
 //prototipo funciones;
-int	ft_hexdisplay(unsigned int number, char format_type);
+int	ft_hexadec(unsigned int number, char *xtype);
 int	ft_char(int c);
 int	ft_percent(void);
-int	ft_pointer(unsigned long num);
+int	ft_pointer(unsigned long ptr, char *mask);
 int	ft_printf(char const *onscreen, ...);
-int	ft_putnbr(int n);
+int	ft_interger(int n);
 int	ft_string(const char *s);
 int	ft_unsigned(unsigned int num);
 #endif
